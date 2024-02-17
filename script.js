@@ -15,7 +15,6 @@ search.addEventListener("click", () => {
     )
         .then((res) => res.json())
         .then((data) => {
-
             if(data.cod =='404'){
                 container.style.height = "400px";
                 weatherBox.classList.remove('active');
@@ -67,8 +66,6 @@ search.addEventListener("click", () => {
                     image.src = "./images/cloud.png";
             }
 
-            console.log(data.main.temp);
-            console.log(temperature)
             temperature.innerHTML = `${parseInt( data.main.temp )}<span>°C</span>`;
             description.innerHTML = `${data.weather[0].description}`;
             humidity.innerHTML = `${data.main.humidity}%`;
